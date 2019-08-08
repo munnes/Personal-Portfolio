@@ -1,0 +1,299 @@
+
+body{
+    width:100vw;
+    display:flex;
+    flex-direction:column;
+    /*background-color:darkslategrey;*/
+ margin : 0 auto ;
+  flex-wrap: wrap;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+#navbar{
+
+padding-bottom:20px;
+padding-top:20px;
+background-color:rgb(222,100,100);
+text-align:right;
+font-size:20px;
+position:fixed;
+width:100%;
+right:0;
+left:0;
+top:0;
+ z-index:1;
+}
+#navbar a{  
+    text-decoration:none;
+    display:inline;
+    margin-right:30px;
+    color:white;
+    font-weight:600;
+   
+}
+
+#welcome-section
+{
+padding-top:100px;/*to avoid overlabing with fixed element*/
+background-color:darkslategrey;
+
+/*this to make this section fit the whole screen*/
+position:relative;
+/* equal to the height of the viewport*/
+height: 100vh;
+
+text-align:center;
+min-width: 100vw;
+ background-size: 100%;
+
+/*no space left and right work with fixed and absolute*/
+/*left:0;
+right:0;*/
+
+}
+#welcome-section h1{
+    color:white;
+    font-size:55px
+}
+#welcome-section p{
+color:rgb(222,100,100);
+font-size:40px;
+
+}
+
+/*contain project section*/
+main{
+
+    background-color:#496597;
+        /*steelblue;*/
+ text-align:center;
+ position:relative;
+ padding-bottom:15vh;
+ padding-top:10vh;
+ font-weight:700;
+width:100%;
+}
+/* span used to put underline only under text, but for h1 and p underline will be full screen*/
+main span{
+     color:white;
+    font-size:40px;
+border-bottom:solid;
+}
+#btn{  
+  background-color:darkslategrey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  /*text-align: center;*/
+  text-decoration: none;
+  /*display: inline-block;*/
+  font-size: 16px;
+  margin: 4px 2px;
+  /*cursor: pointer;*/
+
+}
+#btn:hover{
+ animation-name: clr;
+ animation-duration:1s;
+ animation-fill-mode:forwards;
+}
+@keyframes clr{
+    from{background-color:darkslategrey;}
+    to{background-color:rgb(222,100,100);}
+}
+@media( min-width:901px) {
+    #projects {
+        /*position:relative;*/
+        /*for ie*/
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        /*    */
+        display: grid; /* not compatible with ie*/
+        grid-columns: 1fr 1fr;
+        grid-rows: 1fr 1fr;
+        justify-content: space-around;
+        padding-top: 5vh;
+    }
+
+    #fst {
+        /*for ie*/
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        /*    */
+        grid-column: 1/2;
+        grid-row: 1/2;
+        background-color: #ff007f;
+    }
+
+    #sec {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        background-color: orange;
+    }
+
+    #thrd {
+        margin-top: 10%;
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        background-color: cyan;
+    }
+
+    #frth {
+        margin-top: 10%;
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: yellow;
+    }
+}
+
+.project-tile{
+    /*width:500px;
+    height:700px;*/
+    margin:50px 50px  50px  50px ;
+    padding :50px 50px  50px  50px ;
+    border: 2px solid;
+    /*border-bottom:none;*/
+    text-align:center;
+   /*required for absolute child to work correctly*/
+    position:relative;
+  height:auto;
+  min-width:300px;
+  max-width:300px;
+  font-size:20px;
+  font-weight:800;  
+}
+.project-tile a{
+  width:100%;
+     margin-right:0;
+}
+.project-tile a div:hover{
+     animation-name: clrTxt;
+ animation-duration:1s;
+ animation-fill-mode:forwards;
+ 
+}
+@keyframes clrTxt{
+ from{color:white;} 
+ to{color:red;} 
+    /*from{background-color:white;}
+    to{background-color:red;}*/
+}
+.project-tile img{
+    margin-bottom:10px;
+
+}
+/*div is for fix in container p not working well*/
+.project-tile div{
+    text-decoration:none;
+  padding-top:20px;
+    padding-bottom:20px;
+    background-color:black;
+    color:white;
+    font-size:16px;
+    font-weight:400;
+/*used to aligh element in side container , should be absolute nd width 100%*/
+   right:0;
+   left:0;
+   bottom:0;
+position:absolute;
+width:100%;  
+}
+#contact{
+background-color:darkslategrey;
+
+text-align:center;
+   color:white;
+  height:50vh;
+ margin:0px;
+ padding-top:15vh;
+ width:100vw;
+
+}
+#contact a{
+margin-right:50px;
+ display:inline;
+     text-decoration:none;
+ position:relative;/*required for animation*/
+ /* by the two below picture and name in same line, ex: facebook and it's logo*/
+   overflow: hidden;
+    white-space: nowrap;
+}
+
+#contact a:hover{
+     text-decoration:none;
+    animation-name:moveit;
+    animation-fill-mode:forwards;
+    animation-duration:1s;
+     -webkit-animation-name: moveit;
+    -webkit-animation-duration:1s;
+   animation-direction: alternate;
+
+}
+#contact h1{
+  font-size:40px;
+}
+#contact p{
+      font-size:20px;
+}
+
+@keyframes moveit{
+
+    from {top: 0px;}
+  to {top: 10px;}
+   /*0% {
+        transform:scale(0.8);
+    }*/
+}
+#contact div{
+ 
+  display:inline;
+   text-decoration:none;
+
+ line-height:30px;
+ vertical-align:top;
+   color:white;
+}
+footer{
+    color:white;
+    border-top:solid;
+    border-color:rgb(222,100,100);
+    background-color:darkslategrey;
+    height:10vh;
+     /*margin-left:-8px;*/
+   padding-top:5vh;
+   text-align:center;
+   font-size:16px;
+   font-style:italic;
+   font-weight:400;
+ 
+}
+@media( max-width:900px){
+    #projects {
+         display:flex;
+    flex-direction:column;
+/*justify-content:center;*/
+align-items:center;
+    }
+      #fst {
+        background-color: #ff007f;
+    }
+
+    #sec {
+        background-color: orange;
+    }
+
+    #thrd {
+        background-color: cyan;
+    }
+
+    #frth {
+        background-color: yellow;
+    }
+}
