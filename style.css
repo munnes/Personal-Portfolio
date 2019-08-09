@@ -298,8 +298,10 @@ align-items:center;
     }
 }
 @media( max-width:600px) {
+    body{width:100vw;}
     #welcome-section h1 {
         font-size: 40px;
+        width:100vw;
     }
 
     #welcome-section p {
