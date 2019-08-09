@@ -44,7 +44,8 @@ position:relative;
 height: 100vh;
 
 text-align:center;
-min-width: 100vw;
+/*min-width: 100vw;*/
+    margin-right=0;
  background-size: 100%;
 
 /*no space left and right work with fixed and absolute*/
