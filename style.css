@@ -164,8 +164,9 @@ border-bottom:solid;
    /*required for absolute child to work correctly*/
     position:relative;
   height:auto;
-  min-width:300px;
-  max-width:300px;
+  /*min-width:300px;
+  max-width:300px;*/
+    width:auto;
   font-size:20px;
   font-weight:800;  
 }
