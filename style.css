@@ -319,4 +319,9 @@ align-items:center;
     #contact p {
         font-size: 15px;
     }
+    .project-tile{
+    /*width:500px;
+    height:700px;*/
+    margin:30px 30px  30px  30px ;
+    padding :30px 30px  30px  30px ;)
 }
